@@ -15,7 +15,7 @@ if(w["domain_name"]==None):
 #---------------------------------------------------------------------------
 #checking SPF
 
-try:
+    try:
     temp=True
     result=dns.resolver.resolve(domain,"TXT")
     for i in result:
