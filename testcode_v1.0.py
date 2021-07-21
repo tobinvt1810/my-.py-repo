@@ -15,7 +15,7 @@ if(w["domain_name"]==None):
 #---------------------------------------------------------------------------
 #checking SPF
 
-    try:
+try:
     temp=True
     result=dns.resolver.resolve(domain,"TXT")
     for i in result:
@@ -58,12 +58,17 @@ except:
 if(flag):
     print("\n*The domain contains DMARC record!\n",result[0],'\n')
     
- #-----------------------------------------------------------------------
-#checking DKIM
-try:
-            result=dns.resolver.resolve(selector+'._domainkey.'+domain,"TXT")
-            dkim_result="*The domain contains DKIM record! --- "+str(result[0])
+ #---------------------------------------------------------------------------
+ #checking DANE
  
-        except:
-            dkim_result="*The domain does not contain DKIM record or the selector does not match"
+ import subprocess
+ result=subprocess.Popen(["dig","_443._tcp."+domain,"tlsa","+dnssec","+short"], stdout=subprocess.PIPE)
+ result=result.communicate()[0].decode()
+ result.strip('\n')
+ if(result==''):
+    dane_result="*The domain does not contain DANE record"
+ else:
+    dane_result="*The domain contains DANE record! --- "+str(result)
+ 
+ return render(request,"result.html", {'spf_result':spf_result, 'tls_result':tls_result, 'mtasts_result':mtasts_result, 'dmarc_result':dmarc_result, 'dkim_result':dkim_result, 'dane_result':dane_result})
 
