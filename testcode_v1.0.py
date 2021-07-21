@@ -15,7 +15,7 @@ if(w["domain_name"]==None):
 #---------------------------------------------------------------------------
 #checking SPF
 
-try:
+    try:
     temp=True
     result=dns.resolver.resolve(domain,"TXT")
     for i in result:
@@ -66,3 +66,4 @@ try:
  
         except:
             dkim_result="*The domain does not contain DKIM record or the selector does not match"
+
