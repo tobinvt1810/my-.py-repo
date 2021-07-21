@@ -57,3 +57,13 @@ except:
     flag=False
 if(flag):
     print("\n*The domain contains DMARC record!\n",result[0],'\n')
+    
+ #-----------------------------------------------------------------------
+#checking DKIM
+try:
+            result=dns.resolver.resolve(selector+'._domainkey.'+domain,"TXT")
+            dkim_result="*The domain contains DKIM record! --- "+str(result[0])
+ 
+        except:
+            dkim_result="*The domain does not contain DKIM record or the selector does not match"
+
