@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:lavender;
+}
+.navbar {
+  padding: 10px;
+  overflow: hidden;
+  background-color:lavender;
+}
+
+#right {
+  float: right;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+#search {
+  margin-left: 80px;
+  margin-top: 200px;
+  width: 350px;
+}
+
+#p {
+  color: black;
+}
+
+#img {
+  margin-top: 10px;
+   margin-left: 500px;
+   float: left;
+  }
