@@ -1,10 +1,1 @@
-- 👋 Hi, I’m @Sreeram24
-- 👀 I’m interested in Security Audits, Web Audits, CTFs
-- 🌱 I’m currently learning Python
-- 💞️ I’m looking to collaborate on Ethical Hacking
-- 📫 How to reach me sreerambalakumar@gmail.com
-
-<!---
-Sreeram24/Sreeram24 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+This project is focused on examining the security for the email servers. A website is built in which the user will be able to enter his/her domain name to check for authenticity. We will deploy email security technologies such as anti-spoofing for quick identification of spoofed IPs and to intensify the level of authorization of the IP address, that are coming from a specific email domain. We will use protocols like TLS, SPF, DKIM, DMARC, DANE, STARTTLS, MTA-STS and also the standards of email certificates to give out an overview report.
